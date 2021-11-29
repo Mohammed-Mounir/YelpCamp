@@ -79,19 +79,24 @@
         <div class="valid-feedback">Looks good!</div>
       </div>
 
-      <div class="mb-3">
-        <% campground.images.forEach((img, i) => { %>
-        <img src="<%=img.url%> " class="img-thumbnail" alt="" />
-        <div class="form-check-inline">
-          <input
-            type="checkbox"
-            name="deleteImages[]"
-            value="<%=img.filename%>"
-            id="image-<%=i%>"
-          />
+      <div class="container mb-3">
+        <div class="row">
+          <% campground.images.forEach((img, i) => { %>
+          <div class="col text-center">
+            <img src="<%=img.thumbnail%> " class="img-thumbnail" alt="" />
+            <div class="form-check-inline">
+              <input
+                type="checkbox"
+                name="deleteImages[]"
+                value="<%=img.filename%>"
+                id="image-<%=i%>"
+              />
+            </div>
+            <label for="image-<%=i%>">Delete?</label>
+          </div>
+
+          <% }) %>
         </div>
-        <label for="image-<%=i%>">Delete?</label>
-        <% }) %>
       </div>
 
       <div class="mb-3">

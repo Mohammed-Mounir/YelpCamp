@@ -78,6 +78,22 @@
         >
         <div class="valid-feedback">Looks good!</div>
       </div>
+
+      <div class="mb-3">
+        <% campground.images.forEach((img, i) => { %>
+        <img src="<%= img.url %> " class="img-thumbnail" alt="" />
+        <div class="form-check-inline">
+          <input
+            type="checkbox"
+            name="deleteImages[]"
+            value="<%= img.filename %> "
+            id="image-<%=i%>"
+          />
+        </div>
+        <label for="image-<%=i%>">Delete?</label>
+        <% }) %>
+      </div>
+
       <div class="mb-3">
         <button class="btn btn-secondary">Update Campground</button>
       </div>

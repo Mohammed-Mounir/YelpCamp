@@ -1,9 +1,9 @@
 mapboxgl.accessToken = mapToken;
-const { title, location: campLocation, geometry } = JSON.parse(campground);
+const { title, location: campLocation, geometry } = campground;
 
 const map = new mapboxgl.Map({
-  container: 'map', // container ID
-  style: 'mapbox://styles/mapbox/streets-v11', // style URL
+  container: "map", // container ID
+  style: "mapbox://styles/mapbox/streets-v11", // style URL
   center: geometry.coordinates, // starting position [lng, lat]
   zoom: 10, // starting zoom
 });
